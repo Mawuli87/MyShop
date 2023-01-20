@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "750272260583",
+    "project_id": "mystoreapp-f6e94",
+    "storage_bucket": "mystoreapp-f6e94.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:750272260583:android:75de839c70b11775b37542",
+        "android_client_info": {
+          "package_name": "com.messieyawo.myshopapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "750272260583-jthgs45spftq70pc1upocmb5dlq2avv2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjTczfG3kKpS8vKWOeZXdmOqoNkZd0T1U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "750272260583-jthgs45spftq70pc1upocmb5dlq2avv2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
