@@ -3,7 +3,7 @@
 
 
     <solid android:color="@color/white"/>
-    <stroke android:color="@color/g_icon_tint"
+    <stroke android:color="@color/g_black"
         android:dashGap="0dp"
         android:width="2dp"/>
 

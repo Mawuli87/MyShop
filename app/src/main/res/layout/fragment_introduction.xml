@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.IntroductionFragment">
+    tools:context=".fragments.login.IntroductionFragment">
 
     <ImageView
         android:layout_width="0dp"
@@ -98,7 +98,7 @@
         android:fontFamily="@font/poppins_light"
         android:gravity="center"
         android:text="Best Quality"
-        android:textColor="@color/g_hint"
+        android:textColor="@color/g_black"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@id/tv_right_place"
         app:layout_constraintStart_toStartOf="@id/tv_right_place"

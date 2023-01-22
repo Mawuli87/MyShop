@@ -1,4 +1,4 @@
-package com.messieyawo.myshopapp.fragments
+package com.messieyawo.myshopapp.fragments.login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.messieyawo.myshopapp.R
 import com.messieyawo.myshopapp.databinding.FragmentAccountOptionBinding
+
 
 
 class AccountOptionFragment : Fragment() {
@@ -25,12 +25,14 @@ lateinit var binding:FragmentAccountOptionBinding
         super.onViewCreated(view, savedInstanceState)
 
         binding.loginButton.setOnClickListener {
-            val action = AccountOptionFragmentDirections.actionAccountOptionFragmentToLoginFragment()
+            val action =
+                AccountOptionFragmentDirections.actionAccountOptionFragmentToLoginFragment()
             findNavController().navigate(action)
         }
 
         binding.registerButton.setOnClickListener {
-            val action = AccountOptionFragmentDirections.actionAccountOptionFragmentToRegisterFragment()
+            val action =
+                AccountOptionFragmentDirections.actionAccountOptionFragmentToRegisterFragment()
             findNavController().navigate(action)
         }
     }

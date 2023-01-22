@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:layout_margin="20dp"
-    tools:context=".fragments.AccountOptionFragment">
+    tools:context=".fragments.login.AccountOptionFragment">
 
     <Button
         android:layout_width="match_parent"

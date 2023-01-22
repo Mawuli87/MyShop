@@ -1,4 +1,4 @@
-package com.messieyawo.myshopapp.fragments
+package com.messieyawo.myshopapp.fragments.login
 
 import android.os.Bundle
 import android.util.Log

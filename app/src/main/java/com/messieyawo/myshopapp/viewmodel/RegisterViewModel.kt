@@ -3,7 +3,7 @@ package com.messieyawo.myshopapp.viewmodel
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.messieyawo.com.myshopapplication.utils.Constants.Companion.USERS_COLLECTION
+import com.messieyawo.myshopapp.utils.Constants.Companion.USERS_COLLECTION
 import com.messieyawo.com.myshopapplication.utils.RegisterFieldState
 import com.messieyawo.com.myshopapplication.utils.RegisterValidation
 import com.messieyawo.com.myshopapplication.utils.validateEmail

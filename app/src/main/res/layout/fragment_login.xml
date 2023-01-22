@@ -8,7 +8,7 @@
     android:fillViewport="true"
     android:background="@drawable/secondscreen_background"
 
-    tools:context=".fragments.LoginFragment">
+    tools:context=".fragments.login.LoginFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -51,7 +51,7 @@
             android:fontFamily="@font/poppins_light"
             android:gravity="center"
             android:text="Don't have an account. Register"
-            android:textColor="@color/g_hint"
+            android:textColor="@color/g_black"
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/tv_lets_login"
@@ -96,7 +96,7 @@
             android:fontFamily="@font/poppins_light"
             android:gravity="center"
             android:text="Forgot password"
-            android:textColor="@color/g_hint"
+            android:textColor="@color/g_black"
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/ed_password_login"

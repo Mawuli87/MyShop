@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/introductionFragment"
-        android:name="com.messieyawo.myshopapp.fragments.IntroductionFragment"
+        android:name="com.messieyawo.myshopapp.fragments.login.IntroductionFragment"
         android:label="fragment_introduction"
         tools:layout="@layout/fragment_introduction" >
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.messieyawo.myshopapp.fragments.LoginFragment"
+        android:name="com.messieyawo.myshopapp.fragments.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.messieyawo.myshopapp.fragments.RegisterFragment"
+        android:name="com.messieyawo.myshopapp.fragments.login.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/accountOptionFragment"
-        android:name="com.messieyawo.myshopapp.fragments.AccountOptionFragment"
+        android:name="com.messieyawo.myshopapp.fragments.login.AccountOptionFragment"
         android:label="fragment_account_option"
         tools:layout="@layout/fragment_account_option" >
         <action

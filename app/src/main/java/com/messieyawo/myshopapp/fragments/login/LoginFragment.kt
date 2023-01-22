@@ -1,4 +1,4 @@
-package com.messieyawo.myshopapp.fragments
+package com.messieyawo.myshopapp.fragments.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -18,7 +18,6 @@ import com.messieyawo.myshopapp.dialog.setupBottomSheetDialog
 import com.messieyawo.myshopapp.resource.Resource
 import com.messieyawo.myshopapp.viewmodel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
