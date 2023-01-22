@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.messieyawo.com.myshopapplication.utils.RegisterValidation
+import com.messieyawo.myshopapp.R
 import com.messieyawo.myshopapp.data.User
 import com.messieyawo.myshopapp.databinding.FragmentRegisterBinding
 import com.messieyawo.myshopapp.resource.Resource
@@ -33,6 +35,10 @@ class RegisterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.tvHaveAnAccount.setOnClickListener {
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+        }
 
         binding.apply {
             btnRegister.setOnClickListener {
