@@ -7,7 +7,9 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.messieyawo.myshopapp.R
 import com.messieyawo.myshopapp.databinding.ActivityShoppingBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ShoppingActivity : AppCompatActivity() {
     lateinit var binding: ActivityShoppingBinding
     lateinit var navController: NavController

@@ -35,6 +35,7 @@ class HomeFragment : Fragment() {
             AccessoryFragment(),
             FurnitureFragment()
         )
+        //this will prevent swiping in the viewPager
         binding.viewpagerHome.isUserInputEnabled = false
 
         val viewPager2Adapter =
