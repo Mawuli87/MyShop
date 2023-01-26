@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.messieyawo.myshopapp.R
@@ -18,6 +19,7 @@ import com.messieyawo.myshopapp.adapters.BestProductsAdapter
 import com.messieyawo.myshopapp.adapters.SpecialProductsAdapter
 import com.messieyawo.myshopapp.databinding.FragmentMainCategoryBinding
 import com.messieyawo.myshopapp.resource.Resource
+import com.messieyawo.myshopapp.utils.showBottomNavigationView
 import com.messieyawo.myshopapp.viewmodel.MainCategoryViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -37,6 +39,7 @@ private val viewModel by viewModels<MainCategoryViewModel>()
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
+
         binding = FragmentMainCategoryBinding.inflate(inflater,container,false)
         return binding.root
     }
@@ -47,6 +50,22 @@ private val viewModel by viewModels<MainCategoryViewModel>()
         setupSpecialProductsRv()
         setupBestDealsRv()
         setupBestProducts()
+
+        specialProductsAdapter.onClick = {
+            val b = Bundle().apply { putParcelable("products",it) }
+            findNavController().navigate(R.id.action_homeFragment_to_productsDetailFragment,b)
+        }
+
+        bestDealsAdapter.onClick = {
+            val b = Bundle().apply { putParcelable("products",it) }
+            findNavController().navigate(R.id.action_homeFragment_to_productsDetailFragment,b)
+        }
+
+        bestProductsAdapter.onClick = {
+            val b = Bundle().apply { putParcelable("products",it) }
+            findNavController().navigate(R.id.action_homeFragment_to_productsDetailFragment,b)
+        }
+
 
         lifecycleScope.launchWhenStarted {
             viewModel.specialProducts.collectLatest {
@@ -150,6 +169,11 @@ private val viewModel by viewModels<MainCategoryViewModel>()
     private fun showLoading() {
         binding.mainCategoryProgressbar.visibility = View.VISIBLE
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        showBottomNavigationView()
     }
 
 }
