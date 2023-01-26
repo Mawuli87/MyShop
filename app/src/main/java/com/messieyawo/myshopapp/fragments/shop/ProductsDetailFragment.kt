@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,10 +15,15 @@ import com.messieyawo.myshopapp.R
 import com.messieyawo.myshopapp.adapters.ColorsAdapter
 import com.messieyawo.myshopapp.adapters.SizesAdapter
 import com.messieyawo.myshopapp.adapters.ViewPager2Images
+import com.messieyawo.myshopapp.data.CartProduct
 import com.messieyawo.myshopapp.databinding.FragmentProductsDetailBinding
+import com.messieyawo.myshopapp.resource.Resource
 import com.messieyawo.myshopapp.utils.hideBottomNavigationView
+import com.messieyawo.myshopapp.viewmodel.DetailsViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
 
-
+@AndroidEntryPoint
 class ProductsDetailFragment : Fragment() {
     lateinit var binding:FragmentProductsDetailBinding
 
@@ -27,7 +34,7 @@ class ProductsDetailFragment : Fragment() {
 
     private var selectedColor: Int? = null
     private var selectedSize: String? = null
-    //private val viewModel by viewModels<DetailsViewModel>()
+   private val viewModel by viewModels<DetailsViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -59,6 +66,31 @@ class ProductsDetailFragment : Fragment() {
 
         colorsAdapter.onItemClick = {
             selectedColor = it
+        }
+
+        binding.buttonAddToCart.setOnClickListener {
+            viewModel.addUpdateProductInCart(CartProduct(product, 1, selectedColor, selectedSize))
+        }
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.addToCart.collectLatest {
+                when (it) {
+                    is Resource.Loading -> {
+                        binding.buttonAddToCart.startAnimation()
+                    }
+
+                    is Resource.Success -> {
+                        binding.buttonAddToCart.revertAnimation()
+                        binding.buttonAddToCart.setBackgroundColor(resources.getColor(R.color.black))
+                    }
+
+                    is Resource.Error -> {
+                        binding.buttonAddToCart.stopAnimation()
+                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                    }
+                    else -> Unit
+                }
+            }
         }
 
         binding.apply {
